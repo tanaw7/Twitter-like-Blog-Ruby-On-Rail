@@ -1,0 +1,11 @@
+<h1>Our Blog</h1>
+
+<% @posts.each do |post| %>
+	<% p = post.id.to_s + '. ' + post.title.to_s %>
+	<h2><%= link_to post.title, post %></h2>
+	<p><%= post.content %></p>
+	<p><%= link_to "Edit", edit_post_path(post) %></p>
+	<hr />
+<% end %>
+
+<p><%= link_to "Add a New Post", new_post_path %></p>
