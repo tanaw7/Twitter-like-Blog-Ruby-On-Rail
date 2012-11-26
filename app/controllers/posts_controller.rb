@@ -1,13 +1,11 @@
 class PostsController < ApplicationController
 	def index
 		if current_user
-			flash.now.alert = "Current User Exists"
 			@posts = User.find(session[:user_id]).posts
 			#@user = User.find(session(:user_id))
 			#@posts = Post.all
 		else
-			flash.now.alert = "No he's a fairy tale"
-			@posts = Post.where(:content => nil)
+			@posts = Post.where(:user_id => nil)
 		end
 	end
 

@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+	background-color: lightgray;
+	text-align: center;
+}
+
+#user_nav {
+	text-align: right;
+}

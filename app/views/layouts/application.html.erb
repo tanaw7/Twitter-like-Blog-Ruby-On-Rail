@@ -9,7 +9,10 @@
 <body>
 	
 <div id="user_nav">
+	Current Time: <%= Time.new.inspect %>
+	<%= link_to "Home",  root_url %>
 	<% if current_user %>
+		<hr />
 		Logged in as <%= current_user.email %>
 		<%= link_to "Log out", log_out_path %>
 	<% else %>

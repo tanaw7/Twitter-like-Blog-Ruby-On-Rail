@@ -3,7 +3,7 @@
 <% @posts.each do |post| %>
 	<% p = post.id.to_s + '. ' + post.title.to_s %>
 	<h2><%= link_to post.title, post %></h2>
-	<p>By </p>
+	<p>By: <%= current_user.email %></p>
 	<p><%= post.content %></p>
 	<p>
 	   <%= link_to "Edit", edit_post_path(post) %>
@@ -14,4 +14,20 @@
 	<hr />
 <% end %>
 
-<p><%= link_to "Add a New Post", new_post_path %></p>
+<p> <!-- Here shows either if logged in or not -->
+	<% if current_user %>
+		<%= link_to "Add a New Post", new_post_path %>
+	<% else %>
+		<p>
+			Welcome to our blog of #name NIL!
+		</p>
+		
+		<h2>These are the things I'd like to add</h2>
+		<ul>
+			<li>Replies to posts</li>
+			<li>Profile pictures</li>
+			<li>Profile page</li>
+			<li>Some other things</li>
+		</ul>
+	<% end %>
+</p>
