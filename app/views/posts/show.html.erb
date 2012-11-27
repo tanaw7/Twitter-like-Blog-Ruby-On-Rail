@@ -3,6 +3,8 @@
 <small><%= @post.created_at %></small>
 <small>post_id: <%= @post.id %></small>
 
+
+<!--  If the current user is the owner of the post    -->
 <% if current_user %>
 	<% @cu = current_user.id %>
 <% else %>
