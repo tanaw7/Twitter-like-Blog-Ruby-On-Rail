@@ -2,3 +2,23 @@
 <p><%= @post.content %></p>
 <small><%= @post.created_at %></small>
 <small>post_id: <%= @post.id %></small>
+
+<% if current_user %>
+	<% @cu = current_user.id %>
+<% else %>
+	<% @cu = 0 %>
+<% end %>
+
+
+<% if (@cu == @post.user_id) %>
+	<p>
+	   <%= link_to "Edit", edit_post_path(params[:id]) %>
+	   <%= "  " %>
+	   <%= link_to "Delete", params[:post_id], :confirm => "Are you sure?", 
+	   :method => :delete %>
+	</p>
+<% else %>
+	<p>
+		Like?
+	</p>
+<% end %>
