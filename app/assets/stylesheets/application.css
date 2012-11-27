@@ -13,10 +13,35 @@
  */
 
 body {
-	background-color: lightgray;
+	background-color: black;
 	text-align: center;
+	color: lime;
+}
+
+a {
+	color: yellow;
 }
 
 #user_nav {
 	text-align: right;
 }
+
+#header {
+	background-color: darkgrey;
+	font-size: 22pt;
+}
+
+/* Footer zone */
+
+#footer {
+	background-color: pink;
+	color: black;
+	font-size: 18pt;
+}
+
+#display_posts {
+	background-color: red;
+	color: white;
+}
+
+/* Ends Footer zone */

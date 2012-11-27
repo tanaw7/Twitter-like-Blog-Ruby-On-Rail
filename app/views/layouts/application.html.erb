@@ -7,10 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	
+
+<section id="header">
 <div id="user_nav">
 	Current Time: <%= Time.new.inspect %>
 	<%= link_to "Home",  root_url %>
+	<%= link_to "Profile", nil %>
 	<% if current_user %>
 		<hr />
 		Logged in as <%= current_user.email %>
@@ -20,6 +22,7 @@
 		<%= link_to "Log in", log_in_path %>
 	<% end %>
 </div>
+</section>
 
 <hr />
 
@@ -28,6 +31,15 @@
 <% end %>
 
 <%= yield %>
+
+<section id="footer">
+	<div id="display_users">
+		<p>List of all users: <%= all_users %></p>
+	</div>
+	<div id="display_posts">
+		<p>List of all post IDs: <%= all_posts %></p>
+	</div>
+</section>
 
 </body>
 </html>
