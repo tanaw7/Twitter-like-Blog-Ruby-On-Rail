@@ -1,6 +1,6 @@
 <h1>Our Blog</h1>
 
-<% @posts.reverse.each do |post| %>
+<% @posts.each do |post| %>
 	<% p = post.id.to_s + '. ' + post.title.to_s %>
 	<h2><%= link_to post.title, post %></h2>
 	<p>By: <%= current_user.email %></p>
