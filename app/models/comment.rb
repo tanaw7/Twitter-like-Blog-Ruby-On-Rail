@@ -3,4 +3,8 @@ class Comment < ActiveRecord::Base
 
   belongs_to :post
   belongs_to :user
+
+  validates :user, presence: true
+  validates_presence_of :user_id, :on => :create
+  validates_presence_of :content, :on => :create
 end

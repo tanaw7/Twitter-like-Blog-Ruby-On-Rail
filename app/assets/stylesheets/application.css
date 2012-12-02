@@ -109,6 +109,7 @@ a {
 			background-color: black;
 			text-align: center;
 			color: lime;
+			word-wrap: break-word;
 		}
 
 		#header, #footer {
@@ -124,6 +125,7 @@ a {
 
 		#center {
 			background: darkgrey;
+			color: black;
 		}
 
 		#right {
