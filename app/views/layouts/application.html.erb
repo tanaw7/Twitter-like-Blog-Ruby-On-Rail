@@ -8,25 +8,14 @@
 </head>
 <body>
 
-<section id="header">
-
-</section>
-
-<section id="main">
-
-</section>
-
-<section id="footer">
-
-</section>
-
 	<div id="header">
 		
 		<div id="user_nav">
 			Current Time: <%= Time.new.inspect %>
 			<%= link_to "Home",  root_url %>
-			<%= link_to "Profile", nil %>
+
 			<% if current_user %>
+				<%= link_to "Profile", profile_url %>
 				<hr />
 				
 				<% flash.each do |name, msg| %>
@@ -37,6 +26,7 @@
 				
 				<%= link_to "Log out", log_out_path %>
 			<% else %>
+				<%= link_to "Profile", root_url %>
 				<%= link_to "Sign up", sign_up_path %>
 				<%= link_to "Log in", log_in_path %>
 			<% end %>
@@ -60,7 +50,13 @@
 
 	<div id="footer">
 		<div id="display_users">
-			<p>List of all users: <%= all_users %></p>
+			<code>List of all Users: </code>
+				<% User.all.each do |e| %>
+  			<code>
+   				[<%= link_to e.email, e%>
+   				<%= link_to " #profile", :controller => "users", :action => "others_profile", :id => e.id %>]   				
+ 			</code>
+  				<% end %>
 		</div>
 		<div id="display_posts">
 		
@@ -69,7 +65,7 @@
   			<code>
     			<%= link_to e.id, e%>
   			</code>
-  		<% end %>
+  				<% end %>
 		</div>
 	</div>
 

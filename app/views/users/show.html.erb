@@ -1,0 +1,47 @@
+
+<h1><%= @user.email %> #Blog</h1>
+
+<% @posts.reverse.each do |post| %>
+	<h2><%= link_to post.title, post %></h2>
+	<p>By: <%= @user.email %></p>
+	<p><%= post.content %></p>
+
+<!-- Display Edit and Delete if the current_user owns the post -->
+	
+<% if current_user %>
+	<% @cu = current_user.id %>
+<% else %>
+	<% @cu = 0 %>
+<% end %>
+
+
+<% if (@cu == @user.id) %>
+	<p>
+	   <%= link_to "Edit", edit_post_path(params[:id]) %>
+	   <%= "  " %>
+	   <%= link_to "Delete", params[:post_id], :confirm => "Are you sure?", 
+	   :method => :delete %>
+	</p>
+<% else %>
+	<p>
+		[Nuke this?]
+	</p>
+<% end %>	
+	
+	
+	
+	
+	<hr />
+<% end %>
+
+<p> <!-- Here shows either if logged in or not -->
+	<% if current_user %>
+		<%= link_to "Add a New Post", new_post_path %>
+	<% else %>
+		<p>
+			Welcome to our blog of #name NIL!
+		</p>
+		
+		<h2>You are not logged in...</h2>
+	<% end %>
+</p>
