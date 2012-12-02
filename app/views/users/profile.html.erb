@@ -1,1 +1,9 @@
-<h1>This is my email: <%= @user.email %></h1>
+
+
+<h1>My Profile:</h1>
+
+<code>email: <%= @user.email %></code><br />
+<code>user_id: <%= @user.id %></code><br />
+<code>join_date: <%= @user.created_at %></code><br />
+
+<small>My #Blog Posts: <%= link_to "Click", :controller => "users", :action => "show", :id => @user.id %> </small>
