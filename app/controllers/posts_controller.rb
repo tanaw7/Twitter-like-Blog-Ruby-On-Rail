@@ -19,6 +19,8 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
+		@comment = Comment.new(params[:content])
+		@comments = Comment.where(:post_id => @post.id)
 	end
 
 	def create
@@ -47,5 +49,11 @@ class PostsController < ApplicationController
 		@post.destroy
 
 		redirect_to posts_path, :notice => "Your post has been deleted"
+	end
+
+	############### additional methods #################
+
+	def comment
+
 	end
 end

@@ -1,7 +1,10 @@
+<!-- Display current post -->
+
 <h1><%= @post.title %></h1>
 <p><%= @post.content %></p>
 <small><%= @post.created_at %></small>
 <small>post_id: <%= @post.id %></small>
+<small>Posted by: <%= User.find(@post.user_id).email %> </small>
 
 
 <!--  If the current user is the owner of the post    -->
@@ -22,5 +25,33 @@
 <% else %>
 	<p>
 		Like?
+	</p>
+<% end %>
+
+<!-- Displays Comments -->
+
+<hr />
+<h1>COMMENTS BELOW</h1>
+<% @comments.reverse.each do |comment| %>
+	<% c = '. comment ID: ' + comment.id.to_s %>
+	<p>By: <%= User.find(comment.user_id).email %></p>
+	<p><%= comment.content %></p>
+	
+	<!-- EDIT AND DELETE COMMENT Buttons here -->
+	<br /><br />
+<% end %>
+
+
+<h1>Add a new Comment</h1>
+
+<%= form_for @comment do |f| %>
+	<p>
+		<%= f.label :content %><br />
+		<%= f.text_area :content %>
+	</p>
+	<p>
+		<%= f.hidden_field :user_id, :value => current_user.id %>
+		<%= f.hidden_field :post_id, :value => @post.id %>
+		<%= f.submit "Add a New Comment", :action => "show" %>
 	</p>
 <% end %>

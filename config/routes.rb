@@ -9,6 +9,7 @@ Blog::Application.routes.draw do
   resources :users
   resources :posts
   resources :sessions
+  resources :comments
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

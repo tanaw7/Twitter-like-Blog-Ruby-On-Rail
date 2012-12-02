@@ -37,7 +37,7 @@
 		<p>List of all users: <%= all_users %></p>
 	</div>
 	<div id="display_posts">
-		<p>List of all post IDs: <%= all_posts %></p>
+		<p>List of all post IDs: <%= Post.all.each {|i| print i.id } %></p>
 	</div>
 </section>
 
