@@ -50,8 +50,8 @@
 		<%= f.text_area :content %>
 	</p>
 	<p>
-		<%= f.hidden_field :user_id, :value => current_user.id %>
+		<%= f.hidden_field :user_id, :value => @cu %>
 		<%= f.hidden_field :post_id, :value => @post.id %>
-		<%= f.submit "Add a New Comment", :action => "show" %>
+		<%= f.submit "Add a New Comment" %>
 	</p>
 <% end %>

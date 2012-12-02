@@ -9,37 +9,69 @@
 <body>
 
 <section id="header">
-<div id="user_nav">
-	Current Time: <%= Time.new.inspect %>
-	<%= link_to "Home",  root_url %>
-	<%= link_to "Profile", nil %>
-	<% if current_user %>
-		<hr />
-		Logged in as <%= current_user.email %>
-		<%= link_to "Log out", log_out_path %>
-	<% else %>
-		<%= link_to "Sign up", sign_up_path %>
-		<%= link_to "Log in", log_in_path %>
-	<% end %>
-</div>
+
 </section>
 
-<hr />
+<section id="main">
 
-<% flash.each do |name, msg| %>
-	<%= content_tag :div, msg, :id => "flash#{name}" %>
-<% end %>
-
-<%= yield %>
+</section>
 
 <section id="footer">
-	<div id="display_users">
-		<p>List of all users: <%= all_users %></p>
-	</div>
-	<div id="display_posts">
-		<p>List of all post IDs: <%= Post.all.each {|i| print i.id } %></p>
-	</div>
+
 </section>
+
+	<div id="header">
+		
+		<div id="user_nav">
+			Current Time: <%= Time.new.inspect %>
+			<%= link_to "Home",  root_url %>
+			<%= link_to "Profile", nil %>
+			<% if current_user %>
+				<hr />
+				
+				<% flash.each do |name, msg| %>
+					<%= content_tag :div, msg, :id => "flash#{name}" %>
+				<% end %>
+				
+				Logged in as <%= current_user.email %>
+				
+				<%= link_to "Log out", log_out_path %>
+			<% else %>
+				<%= link_to "Sign up", sign_up_path %>
+				<%= link_to "Log in", log_in_path %>
+			<% end %>
+		</div>	
+		
+	</div>
+
+	<div id="center" class="column">
+		<%= yield %>
+	</div>
+
+	<div id="left" class="column">
+		<h2>This is the left sidebar.</h2>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla.</p>
+	</div>
+
+	<div id="right" class="column">
+		<h2>This is the right sidebar.</h2>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla.</p>
+	</div>
+
+	<div id="footer">
+		<div id="display_users">
+			<p>List of all users: <%= all_users %></p>
+		</div>
+		<div id="display_posts">
+		
+			<code>List of all post IDs: </code>
+				<% Post.all.each do |e| %>
+  			<code>
+    			<%= link_to e.id, e%>
+  			</code>
+  		<% end %>
+		</div>
+	</div>
 
 </body>
 </html>
