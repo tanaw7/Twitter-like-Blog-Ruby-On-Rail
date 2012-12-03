@@ -1,4 +1,4 @@
-<h1>Our Blog</h1>
+<h1>The #BLoG</h1>
 
 <% @posts.reverse.each do |post| %>
 	<% p = post.id.to_s + '. ' + post.title.to_s %>
@@ -18,16 +18,34 @@
 	<% if current_user %>
 		<%= link_to "Add a New Post", new_post_path %>
 	<% else %>
-		<p>
-			Welcome to our blog of #name NIL!
-		</p>
+		<p><code>
+			Welcome to the #BLoG !
+
+			My First project on Learning Ruby On Rails.<br/ >
+			Most codes are hand-written.<br />
+			Resources: railstutorialByMichaelHartl, StackOverFlow.com, a bit of annoyed Opal's answers<br />
+			Since I'm working hard on project, now I just need to chat with someone....myself...
+		</code></p>
 		
 		<h2>These are the things I'd like to add</h2>
 		<ul>
-			<li>Replies to posts</li>
-			<li>Profile pictures</li>
-			<li>Profile page</li>
+			<li>Replies to posts: D</li>
+			<li>Profile pictures: U</li>
+			<li>Profile page: ND</li>
+			<li>Security measure: ND</li>
+			<li>Styling: ND</li>
+			<li>.</li>
+			<li>.</li>
+			<li>.</li>
+			<li>.</li>
+			<li>This page: ND</li>
 			<li>Some other things</li>
 		</ul>
+		
+		Git Hub at: <a href="https://github.com/nixor/cpblog">Here!</a>
+			
+		<p>Welcome Suggestions, Cheers.</p>
+		<code>~nixor</code>
+		
 	<% end %>
 </p>
