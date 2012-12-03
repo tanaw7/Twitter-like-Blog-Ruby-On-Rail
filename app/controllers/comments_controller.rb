@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
 		@comment = Comment.new(params[:comment])
 
 		if @comment.save
-			redirect_to posts_path, :notice => "Your comment was saved"
+			redirect_to post_url(@comment.post_id), :notice => "Your comment was saved"
 		else
 			render "new", :notice => "Try again"
 		end

@@ -36,12 +36,7 @@
 
 <p> <!-- Here shows either if logged in or not -->
 	<% if current_user %>
-		<%= link_to "Add a New Post", new_post_path %>
 	<% else %>
-		<p>
-			Welcome to our blog of #name NIL!
-		</p>
-		
 		<h2>You are not logged in...</h2>
 	<% end %>
 </p>
