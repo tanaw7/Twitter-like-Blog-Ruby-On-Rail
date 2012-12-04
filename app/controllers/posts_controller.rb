@@ -7,6 +7,8 @@ class PostsController < ApplicationController
 		else
 			@posts = Post.where(:user_id => nil)
 		end
+
+		@user = current_user
 	end
 
 	def new
@@ -21,6 +23,7 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 		@comment = Comment.new(params[:content])
 		@comments = Comment.where(:post_id => @post.id)
+		@user = User.find(Post.find(params[:id]).user_id)
 	end
 
 	def create

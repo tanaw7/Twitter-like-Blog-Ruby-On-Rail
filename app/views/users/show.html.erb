@@ -3,7 +3,7 @@
 
 <% @posts.reverse.each do |post| %>
 	<h2><%= link_to post.title, post %></h2>
-	<p>By: <%= @user.email %></p>
+	<p>By: <%= link_to @user.email, :controller => "users", :action => "others_profile", :id => @user.id %> </p>
 	<p><%= post.content %></p>
 
 <!-- Display Edit and Delete if the current_user owns the post -->

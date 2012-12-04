@@ -4,7 +4,7 @@
 <p><%= @post.content %></p>
 <small><%= @post.created_at %></small>
 <small>post_id: <%= @post.id %></small>
-<small>Posted by: <%= User.find(@post.user_id).email %> </small>
+<small>Posted by: <%= link_to @user.email, :controller => "users", :action => "others_profile", :id => @user.id %> </small>
 
 
 <!--  If the current user is the owner of the post    -->
@@ -34,7 +34,7 @@
 <h1>COMMENTS BELOW</h1>
 <% @comments.each do |comment| %>
 	<% c = '. comment ID: ' + comment.id.to_s %>
-	<p>By: <%= User.find(comment.user_id).email %></p>
+	<p>By: <%= link_to @user.email, :controller => "users", :action => "others_profile", :id => @user.id %> </p>
 	<p><%= comment.content %></p>
 	
 	<!-- EDIT AND DELETE COMMENT Buttons here -->
