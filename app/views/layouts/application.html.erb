@@ -53,8 +53,7 @@
 			<code>List of all Users: </code>
 				<% User.all.each do |e| %>
   			<code>
-   				[<%= link_to e.email, e%>
-   				<%= link_to " #profile", :controller => "users", :action => "others_profile", :id => e.id %>]   				
+   				[<%= link_to e.email, :controller => "users", :action => "others_profile", :id => e.id %>]   				
  			</code>
   				<% end %>
 		</div>
