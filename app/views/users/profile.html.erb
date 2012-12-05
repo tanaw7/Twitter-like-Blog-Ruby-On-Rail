@@ -5,6 +5,7 @@
 <code>email: <%= @user.email %></code><br />
 <code>user_id: <%= @user.id %></code><br />
 <code>post counts: <%= @user.posts.count %></code> <br />
+<code>comments: <%= @user.comments.count %></code><br />
 <code>join_date: <%= @user.created_at %></code><br />
 
 <small>My #Blog Posts: <%= link_to "Click", :controller => "users", :action => "show", :id => @user.id %> </small>

@@ -1,7 +1,7 @@
 <!-- Display current post -->
 
 <h1><%= @post.title %></h1>
-<p><%= @post.content %></p>
+<p class="paragraph"><%= simple_format(@post.content) %></p>
 <small><%= @post.created_at %></small>
 <small>post_id: <%= @post.id %></small>
 <small>Posted by: <%= link_to @user.email, :controller => "users", :action => "others_profile", :id => @user.id %> </small>
@@ -34,7 +34,7 @@
 <h1>COMMENTS BELOW</h1>
 <% @comments.each do |comment| %>
 	<p>By: <%= link_to User.find(comment.user_id).email, :controller => "users", :action => "others_profile", :id => comment.user_id %> </p>
-	<p><%= comment.content %></p>
+	<p class="paragraph"><%= simple_format(comment.content) %></p>
 	
 	<!-- EDIT AND DELETE COMMENT Buttons here -->
 	<br /><br />
@@ -46,7 +46,7 @@
 <%= form_for @comment do |f| %>
 	<p>
 		<%= f.label :content %><br />
-		<%= f.text_area :content %>
+		<%= f.text_area :content, :size => "70x10" %>
 	</p>
 	<p>
 		<%= f.hidden_field :user_id, :value => @cu %>
