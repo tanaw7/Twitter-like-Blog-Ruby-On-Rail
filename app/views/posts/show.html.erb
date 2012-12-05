@@ -33,8 +33,7 @@
 <hr /><hr />
 <h1>COMMENTS BELOW</h1>
 <% @comments.each do |comment| %>
-	<% c = '. comment ID: ' + comment.id.to_s %>
-	<p>By: <%= link_to @user.email, :controller => "users", :action => "others_profile", :id => @user.id %> </p>
+	<p>By: <%= link_to User.find(comment.user_id).email, :controller => "users", :action => "others_profile", :id => comment.user_id %> </p>
 	<p><%= comment.content %></p>
 	
 	<!-- EDIT AND DELETE COMMENT Buttons here -->
