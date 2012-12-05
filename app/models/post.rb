@@ -8,5 +8,8 @@ class Post < ActiveRecord::Base
   validates_presence_of :user_id, :on => :create
   validates_presence_of :content, :on => :create
   validates_presence_of :title, :on => :create
+  validates_presence_of :user_id, :on => :update
+  validates_presence_of :content, :on => :update
+  validates_presence_of :title, :on => :update
 
 end
