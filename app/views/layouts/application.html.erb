@@ -11,25 +11,7 @@
 	<div id="header">
 		
 		<div id="user_nav">
-			Current Time: <%= Time.new.inspect %>
-			<%= link_to "Home",  root_url %>
-
-			<% if current_user %>
-				<%= link_to "Profile", profile_url %>
-				<hr />
-				
-				<% flash.each do |name, msg| %>
-					<%= content_tag :div, msg, :id => "flash#{name}" %>
-				<% end %>
-				
-				Logged in as <%= current_user.email %>
-				
-				<%= link_to "Log out", log_out_path %>
-			<% else %>
-				<%= link_to "Profile", root_url %>
-				<%= link_to "Sign up", sign_up_path %>
-				<%= link_to "Log in", log_in_path %>
-			<% end %>
+			<%= Date.new.inspect %>
 		</div>	
 		
 	</div>
@@ -38,14 +20,34 @@
 		<%= yield %>
 	</div>
 
+<!-- ******************* Left Navigation Bar ******************* -->
+
 	<div id="left" class="column">
-		<h2>A sidebar.</h2>
-		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla.</p>
+		<div id="leftnav0">
+			<h2>A sidebar.</h2>
+			<% if current_user %>
+				<p id="leftnav">Logged in as <%= current_user.email %></p>
+				<div id="leftnav"><%= link_to "Home",  root_url %></div><br />
+				<div id="leftnav"><%= link_to "Profile", profile_url %></div><br />		
+				<div id="leftnav"><%= link_to "Log out", log_out_path %></div><br />
+				<% else %>
+				<div id="leftnav"><%= link_to "Home",  root_url %></div><br />
+				<div id="leftnav"><%= link_to "Profile", root_url %></div><br />
+				<div id="leftnav"><%= link_to "Sign up", sign_up_path %></div><br />
+				<div id="leftnav"><%= link_to "Log in", log_in_path %></div><br />
+
+			<% end %>
+
+			<% flash.each do |name, msg| %>
+				<%= content_tag :div, msg, :id => "flash#{name}", :class => "leftnav" %>
+			<% end %>
+		</div>
+
 	</div>
 
 	<div id="right" class="column">
 		<h2>Only a true firefox can blink</h2>
-		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing </p>
 	</div>
 
 	<div id="footer">
