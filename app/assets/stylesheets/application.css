@@ -29,14 +29,12 @@
 			padding: 0 10px;        /* LC padding */
 			right: 240px;           /* LC fullwidth + CC padding */
 			margin-left: -100%;
-			min-height: 20em;
 		}
 
 		#right {
 			width: 130px;           /* RC width */
 			padding: 0 10px;        /* RC padding */
 			margin-right: -100%;
-			min-height: 30em;
 		}
 
 		#footer {
@@ -91,43 +89,18 @@
 
 
 		#left {
-			opacity: 0.98;
+			background-image: url('crm.jpg');
+			opacity: 0.8;
 			padding-bottom: 1em;
 			padding-top: 1em;
-			color: #CFB1AE;
-		}
-
-		#leftnav0{
-			position: fixed;
-			background-image: url('leather.jpg');
-			width: 180px;
-			border-radius: 14pt;
-		}
-		#leftnav, .leftnav {
-			padding-top: 14px;
-			padding-bottom: 14px;
-			background-color: #262836;
-			border-radius: 10pt;
-			opacity: 1.0;
-			color: white;
-			text-align: center;
-		}
-
-		#leftnav a{
-			color: lightgrey;
-		}
-
-		#leftnav a:hover{
-			color: white;
 		}
 
 		#center {
 			background-image: url('smless4.jpg');
 			color: lightyellow;
-			opacity: 0.975;
+			opacity: 0.9;
 			padding-bottom: 1em;
 			padding-top: 1em;
-			font-size: 12pt;
 		}
 
 		#right {

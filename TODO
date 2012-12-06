@@ -13,11 +13,3 @@ x Makes each username (in the posted by, commented by) becomes a link to their p
 
 [Posts/Comments General]
 add newline formatted
-
-[Friends]
-add friends relation with with users
-user has_many friends
-friends belongs_to user
-
-list friends posts in home feeds as well.
-list friends in each user's profile page.
