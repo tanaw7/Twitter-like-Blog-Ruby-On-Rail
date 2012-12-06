@@ -10,9 +10,10 @@
 
 	<div id="header">
 		
-		<div id="user_nav">
-			<%= Date.new.inspect %>
-		</div>	
+		<div id="headnav">
+			<p>The #BLoG</p>
+		</div>
+
 		
 	</div>
 
@@ -23,31 +24,38 @@
 <!-- ******************* Left Navigation Bar ******************* -->
 
 	<div id="left" class="column">
-		<div id="leftnav0">
-			<h2>A sidebar.</h2>
-			<% if current_user %>
-				<p id="leftnav">Logged in as <%= current_user.email %></p>
-				<div id="leftnav"><%= link_to "Home",  root_url %></div><br />
-				<div id="leftnav"><%= link_to "Profile", profile_url %></div><br />		
-				<div id="leftnav"><%= link_to "Log out", log_out_path %></div><br />
-				<% else %>
-				<div id="leftnav"><%= link_to "Home",  root_url %></div><br />
-				<div id="leftnav"><%= link_to "Profile", root_url %></div><br />
-				<div id="leftnav"><%= link_to "Sign up", sign_up_path %></div><br />
-				<div id="leftnav"><%= link_to "Log in", log_in_path %></div><br />
 
-			<% end %>
+		<% if current_user %>
+			<p id="leftnav">Logged in as <%= current_user.email %></p>
+			<div id="leftnav"><%= link_to "Home",  root_url %></div><br />
+			<div id="leftnav"><%= link_to "Profile", profile_url %></div><br />		
+			<div id="leftnav"><%= link_to "Log out", log_out_path %></div><br />
+			<% else %>
+			<div id="leftnav"><%= link_to "Home",  root_url %></div><br />
+			<div id="leftnav"><%= link_to "Profile", root_url %></div><br />
+			<div id="leftnav"><%= link_to "Sign up", sign_up_path %></div><br />
+			<div id="leftnav"><%= link_to "Log in", log_in_path %></div><br />
 
-			<% flash.each do |name, msg| %>
-				<%= content_tag :div, msg, :id => "flash#{name}", :class => "leftnav" %>
-			<% end %>
-		</div>
+		<% end %>
+
+		<% flash.each do |name, msg| %>
+			<%= content_tag :div, msg, :id => "flash#{name}", :class => "leftnav" %>
+		<% end %>
+		
 
 	</div>
 
 	<div id="right" class="column">
-		<h2>Only a true firefox can blink</h2>
-		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing </p>
+		<div id="line1">Recent Posts: </div>
+		<div id="recentPosts">
+			<% Post.last(7).each do |e| %>
+  				<hr />
+  				<code>
+   					<%= link_to e.title, :controller => "posts", :action => "show", :id => e.id %>   				
+ 				</code>
+  			<% end %>
+		</div>
+		
 	</div>
 
 	<div id="footer">

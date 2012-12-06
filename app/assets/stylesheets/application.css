@@ -1,163 +1,215 @@
-		/*** The Essential Code ***/
-
-		body {
-			margin: 0;
-			padding-left: 200px;    /* LC fullwidth */
-			padding-right: 190px;   /* RC fullwidth + CC padding */
-			min-width: 240px;       /* LC fullwidth + CC padding */
-		}
-
-		#header, #footer {
-			margin-left: -200px;    /* LC fullwidth */
-			margin-right: -190px;   /* RC fullwidth + CC padding */
-		}
-
-		.column {
-			position: relative;
-			float: left;
-			border-radius: 10px;
-		}
-
-		#center {
-			padding: 0 20px;
-			width: 100%;
-			min-height: 40em;
-		}
-
-		#left {
-			width: 180px;           /* LC width */
-			padding: 0 10px;        /* LC padding */
-			right: 240px;           /* LC fullwidth + CC padding */
-			margin-left: -100%;
-			min-height: 20em;
-		}
-
-		#right {
-			width: 130px;           /* RC width */
-			padding: 0 10px;        /* RC padding */
-			margin-right: -100%;
-			min-height: 30em;
-		}
-
-		#footer {
-			clear: both;
-		}
-
-		/*** IE Fix ***/
-		* html #left {
-			left: 150px;            /* RC fullwidth */
-		}
-
-		/************** Just for Looks *******************/
-
-		body {
-			background: #FFF;
-			background-color: black;
-			background-image: url('smless.jpg');
-
-			font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
-			text-align: center;
-			color: #08000F;
-			word-wrap: break-word;
-		}
-
-		body code {
-			font-style: italic;
-		}
-
-		#header {
-			font-size: 14pt;
-			text-align: center;
-			padding: 0.3em 0;
-			background: black;
-			color: white;
-			opacity: 0.7;
-			padding-bottom: 1em;
-			padding-top: 1em;
-		}
-
-		#footer {
-			font-size: 10pt;
-			text-align: center;
-			padding: 0.3em 0;
-			background: #010001;
-			color: white;
-		}
-		#display_posts {
-			background-color: #00001F;
-			color: white;
-			padding: 1em;
-		}
 
 
-		#left {
-			opacity: 0.98;
-			padding-bottom: 1em;
-			padding-top: 1em;
-			color: #CFB1AE;
-		}
+/*** The Essential Code ***/
 
-		#leftnav0{
-			position: fixed;
-			background-image: url('leather.jpg');
-			width: 180px;
-			border-radius: 14pt;
-		}
-		#leftnav, .leftnav {
-			padding-top: 14px;
-			padding-bottom: 14px;
-			background-color: #262836;
-			border-radius: 10pt;
-			opacity: 1.0;
-			color: white;
-			text-align: center;
-		}
+body {
+	margin: 0;
+	padding-left: 200px;    /* LC fullwidth */
+	padding-right: 190px;   /* RC fullwidth + CC padding */
+	min-width: 240px;       /* LC fullwidth + CC padding */
+}
 
-		#leftnav a{
-			color: lightgrey;
-		}
+#header, #footer {
+	margin-left: -200px;    /* LC fullwidth */
+	margin-right: -190px;   /* RC fullwidth + CC padding */
+}
 
-		#leftnav a:hover{
-			color: white;
-		}
+.column {
+	position: relative;
+	float: left;
+	border-bottom-right-radius: 12pt;
+	border-bottom-left-radius: 12pt;
+}
 
-		#center {
-			background-image: url('smless4.jpg');
-			color: lightyellow;
-			opacity: 0.975;
-			padding-bottom: 1em;
-			padding-top: 1em;
-			font-size: 12pt;
-		}
+#center {
+	padding: 0 20px;
+	width: 100%;
+	min-height: 40em;
+}
 
-		#right {
-			background: darkgrey;
-			background-image: url('smless3.jpg');
-			color: white;
-			font-size: 20pt;
-			text-decoration: bold;
-			opacity: 0.95;
-			padding-bottom: 1em;
-			padding-top: 1em;
-		}
+#left {
+	width: 180px;           /* LC width */
+	padding: 0 10px;        /* LC padding */
+	right: 240px;           /* LC fullwidth + CC padding */
+	margin-left: -100%;
+	min-height: 26em;
+}
 
-		#right h2{ 								/* remove any time */
-			text-decoration: blink;
-		}
+#right {
+	width: 130px;           /* RC width */
+	padding: 0 10px;        /* RC padding */
+	margin-right: -100%;
+	min-height: 30em;
+}
 
-		.column {
-			padding-top: 1em;
-			text-align: justify;
-		}
+#footer {
+	clear: both;
+}
+
+/*** IE Fix ***/
+* html #left {
+	left: 150px;            /* RC fullwidth */
+}
+
+/************** Just for Looks *******************/
+
+body {
+	background: #FFF;
+	background-color: black;
+	background-image: url('smless.jpg');
+
+	font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+	text-align: center;
+	color: #08000F;
+	word-wrap: break-word;
+}
+
+body code {
+	font-style: italic;
+}
+
+#header {
+	font-size: 14pt;
+	text-align: center;
+	padding: 0.3em 0;
+	background-image: url('smless1.jpg');
+	color: white;
+}
+
+
+
+#headnav {
+	background: darkgrey;
+	font-family:      "Roman",
+                    "Brush Script MT",
+                    cursive;
+	font-size: 40pt;
+	font-weight: bold;
+	color: black;
+	text-shadow: 0 1px 0 #000; 
+
+	box-shadow: 5px 5px 24px black;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: 40pt; 
+
+}
+	#footer {
+	font-size: 10pt;
+	text-align: center;
+	padding: 0.3em 0;
+	background: #010001;
+	color: white;
+}
+#display_posts {
+	background-color: #00001F;
+	color: white;
+	padding: 1em;
+}
+
+
+#left {
+	background-image: url('leather.jpg');
+	opacity: 0.98;
+	padding-bottom: 1em;
+	padding-top: 3em;
+	color: #AFCBE3;
+	text-align: center;
+}
+
+#leftnav, .leftnav {
+	background-image: url('smless4.jpg');
+	border-radius: 14pt;
+	padding-top: 18px;
+	padding-bottom: 14px;
+	background-color: #262836;
+	opacity: 1.0;
+	color: white;
+	text-align: center;
+	-webkit-box-shadow: 9px 9px 12px rgba(80, 75, 85, 0.77);
+	-moz-box-shadow:    9px 9px 12px rgba(80, 75, 85, 0.77);
+	box-shadow:         9px 9px 12px rgba(80, 75, 85, 0.77);
+}
+
+#leftnav a{
+	color: lightgrey;
+}
+
+#leftnav a:hover{
+	color: white;
+}
+
+#center {
+	background-image: url('smless4.jpg');
+	color: lightyellow;
+	opacity: 0.975;
+	padding-bottom: 5em;
+	padding-top: 1em;
+	font-size: 12pt;
+}
+
+#right {
+	background: darkgrey;
+	background-image: url('smless5.jpg');
+	color: white;
+	font-size: 12pt;
+	text-decoration: bold;
+	opacity: 0.95;
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
+
+#right h2{ 								/* remove any time */
+	text-decoration: blink;
+}
+
+#recentPosts {
+
+}
+
+#recentPosts a{
+	color: lightgrey;
+}
+
+#recentPosts a:hover{
+	color: #28FCB2;
+}
+
+.column {
+	padding-top: 1em;
+	text-align: justify;
+}
 /*********** hyper Links and other Trivials *******************/
-		a {
-			color: #15F5F5;
-		}
+a {
+	color: #15F5F5;
+	text-decoration: none;
+}
 
-		a:hover {
-			color: yellow;
-		}
+a:hover {
+	color: yellow;
+}
 
-		hr {
-			color: white;
-		}
+hr {
+	color: white;
+}
+
+#line1 {
+	color: #AFCBE3;
+	text-decoration: none;
+	text-align: center;
+	padding: 2 2 2 2em;
+	background-image: url('leather.jpg');
+	border-radius: 12pt;
+}
+
+.title {
+	color: #AFCBE3;
+}
+
+/************* Custom Fonts **********************/
+
+@font-face {
+	font-family: 'Loyal';
+	src: url('Loyal.tff');
+}
