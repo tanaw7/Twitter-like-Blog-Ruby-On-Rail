@@ -21,22 +21,21 @@
 		#center {
 			padding: 0 20px;
 			width: 100%;
-			min-height: 40em;
+			min-height: 50em;
 		}
 
 		#left {
 			width: 180px;           /* LC width */
-			padding: 0 10px;        /* LC padding */
+			padding: 10px 10px;        /* LC padding */
 			right: 240px;           /* LC fullwidth + CC padding */
 			margin-left: -100%;
-			min-height: 20em;
 		}
 
 		#right {
 			width: 130px;           /* RC width */
-			padding: 0 10px;        /* RC padding */
+			padding: -1 10px;        /* RC padding */
 			margin-right: -100%;
-			min-height: 30em;
+			margin-top: -2%;
 		}
 
 		#footer {
@@ -102,6 +101,7 @@
 			background-image: url('leather.jpg');
 			width: 180px;
 			border-radius: 14pt;
+			min-height: 26em;
 		}
 		#leftnav, .leftnav {
 			padding-top: 14px;
@@ -127,18 +127,25 @@
 			opacity: 0.975;
 			padding-bottom: 1em;
 			padding-top: 1em;
+			
 			font-size: 12pt;
 		}
 
 		#right {
-			background: darkgrey;
-			background-image: url('smless3.jpg');
 			color: white;
 			font-size: 20pt;
 			text-decoration: bold;
 			opacity: 0.95;
 			padding-bottom: 1em;
 			padding-top: 1em;
+		}
+
+		#rightnav0 {
+			position: fixed;
+			background-image: url('smless5.jpg');
+			width: 140px;
+			border-radius: 14pt;
+			min-height: 15em;
 		}
 
 		#right h2{ 								/* remove any time */
