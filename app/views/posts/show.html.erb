@@ -1,9 +1,9 @@
 <!-- Display current post -->
 
-<h1><%= @post.title %></h1>
+<h1 class="title"><%= @post.title %></h1>
 <p class="paragraph"><%= simple_format(@post.content) %></p>
-<small><%= @post.created_at %></small>
-<small>post_id: <%= @post.id %></small>
+<small><%= @post.created_at %></small><br />
+<small>post_id: <%= @post.id %></small><br />
 <small>Posted by: <%= link_to @user.email, :controller => "users", :action => "others_profile", :id => @user.id %> </small>
 
 
@@ -30,8 +30,7 @@
 
 <!-- Displays Comments -->
 
-<hr /><hr />
-<h1>COMMENTS BELOW</h1>
+<h2 id="line1">~~ Comments ~~</h1>
 <% @comments.each do |comment| %>
 	<p>By: <%= link_to User.find(comment.user_id).email, :controller => "users", :action => "others_profile", :id => comment.user_id %> </p>
 	<p class="paragraph"><%= simple_format(comment.content) %></p>
