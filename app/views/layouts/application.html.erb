@@ -48,7 +48,7 @@
 	<div id="right" class="column">
 		<div id="line1">Recent Posts: </div>
 		<div id="recentPosts">
-			<% Post.last(7).each do |e| %>
+			<% Post.last(7).reverse.each do |e| %>
   				<hr />
   				<code>
    					<%= link_to e.title, :controller => "posts", :action => "show", :id => e.id %>   				
@@ -56,10 +56,6 @@
   			<% end %>
 		</div>
 		
-		<div id="rightnav0">
-			<h2>Only a true firefox can blink</h2>
-			<p>Lorem ipsum dolor sit amet. </p>
-		</div>
 	</div>
 
 	<div id="footer">

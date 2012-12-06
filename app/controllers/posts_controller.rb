@@ -16,6 +16,11 @@ class PostsController < ApplicationController
 	end
 
 	def edit
+		if current_user
+			@cu = current_user.id
+		else
+			@cu = 0
+		end		
 		@post = Post.find(params[:id])
 	end
 

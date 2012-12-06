@@ -4,3 +4,10 @@
 # A link to that user's profile, displaying that user's email (or username)
 <p>By: <%= link_to @user.email, :controller => "users", :action => "others_profile", :id => @user.id %> </p>
 
+
+# create a variable @cu current user exists?
+<% if current_user %>
+	<% @cu = current_user.id %>
+<% else %>
+	<% @cu = 0 %>
+<% end %>
