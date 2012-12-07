@@ -30,7 +30,7 @@
 
 <!-- Displays Comments -->
 
-<h2 id="line1">~~ Comments ~~</h1>
+<h2 id="line1">~~ Comments ~~</h2>
 <% @comments.each do |comment| %>
 	<p>By: <%= link_to User.find(comment.user_id).email, :controller => "users", :action => "others_profile", :id => comment.user_id %> </p>
 	<p class="paragraph"><%= simple_format(comment.content) %></p>

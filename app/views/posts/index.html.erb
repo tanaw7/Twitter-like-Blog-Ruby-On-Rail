@@ -1,9 +1,9 @@
-<h1>The #BLoG</h1>
+<h1>The #BLoG Home Feeds</h1>
 
 <% @posts.reverse.each do |post| %>
 	<% p = post.id.to_s + '. ' + post.title.to_s %>
 	<h2><%= link_to post.title, post %></h2>
-	<p>By: <%= link_to @user.email, :controller => "users", :action => "profile", :id => @user.id %> </p>
+	<p>By: <%= link_to User.find(post.user_id).email, :controller => "users", :action => "others_profile", :id => User.find(post.user_id).id %> </p>
 	<p><%= simple_format(post.content) %></p>
 	<p>
 	   <%= link_to "Edit", edit_post_path(post) %>
@@ -11,7 +11,7 @@
 	   <%= link_to "Delete", post, :confirm => "Are you sure?", 
 	   :method => :delete %>
 	</p>
-	<hr />
+	<h2 id="line1">~~~~</h2>
 <% end %>
 
 <p> <!-- Here shows either if logged in or not -->

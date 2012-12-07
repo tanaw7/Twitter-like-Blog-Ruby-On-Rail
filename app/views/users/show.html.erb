@@ -18,7 +18,7 @@
 <% if (@cu == @user.id) %>
 	<p>
 	   <%= link_to "Edit", edit_post_path(params[:id]) %>
-	   <%= "  " %>
+	   <%= " | " %>
 	   <%= link_to "Delete", params[:post_id], :confirm => "Are you sure?", 
 	   :method => :delete %>
 	</p>
@@ -31,12 +31,13 @@
 	
 	
 	
-	<hr />
+	<h2 id="line1">~~~~</h2>
 <% end %>
 
 <p> <!-- Here shows either if logged in or not -->
-	<% if current_user %>
+	<% if @cu == @user.id %>
+		<%= link_to "Add a New Post", new_post_path %>
 	<% else %>
-		<h2>You are not logged in...</h2>
+		<% nil %>
 	<% end %>
 </p>

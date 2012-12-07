@@ -11,3 +11,6 @@
 <% else %>
 	<% @cu = 0 %>
 <% end %>
+
+# for querying followed posts
+Post.where("user_id = 1 OR user_id = 2").last(5).each {|i| puts i.id; puts i.user_id}
