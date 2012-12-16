@@ -8,6 +8,12 @@ Blog::Application.routes.draw do
 
   match "/profile/:id" => "users#profile"
 
+#### FOR FACEBOOK ######################################
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+########################################################
+
   root :to => 'posts#index'
 
   resources :users
