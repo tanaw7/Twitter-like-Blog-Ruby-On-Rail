@@ -212,3 +212,10 @@ hr {
 	font-family: 'Loyal';
 	src: url('Loyal.tff');
 }
+
+/************* FACEBOOK ***************************/
+
+.fb-send {
+	margin-left: 3pt;
+	margin-right: auto;
+}

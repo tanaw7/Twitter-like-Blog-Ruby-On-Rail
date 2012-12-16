@@ -8,8 +8,6 @@ class PostsController < ApplicationController
 		else
 			@posts = Post.where(:user_id => nil)
 		end
-
-		@user = current_user
 	end
 
 	def new

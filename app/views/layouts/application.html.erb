@@ -8,24 +8,25 @@
 </head>
 <body>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=183919201747476";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 	<div id="header">
 		
 		<div id="headnav">
 			<p>The #BLoG</p>
 		</div>
-
-       <iframe src="https://www.facebook.com/plugins/like.php?href=the-blog.herokuapp.com"
-        scrolling="no" frameborder="0"
-        style="border:none; width:450px; height:80px"></iframe>
-
         
-
 		<div id="user_nav">
 		  <% if current_user %>
-		    Signed in as <strong><%= current_user.name %></strong>!
-		    <%= link_to "Sign out", signout_path, id: "sign_out" %>
 		  <% else %>
-		    <%= link_to "Sign in with Facebook", "/auth/facebook/", id: "sign_in" %>
+		    <%= link_to (image_tag "fblogin.gif"), "/auth/facebook/", id: "sign_in" %>
 		  <% end %>
 		</div>
 
@@ -51,6 +52,7 @@
 			<div id="leftnav"><%= link_to "Profile", root_url %></div><br />
 			<div id="leftnav"><%= link_to "Sign up", sign_up_path %></div><br />
 			<div id="leftnav"><%= link_to "Log in", log_in_path %></div><br />
+			<div id="leftnav"><%= link_to (image_tag "fblogin.gif"), "/auth/facebook/", id: "sign_in" %></div><br />
 
 		<% end %>
 
@@ -76,6 +78,7 @@
 	</div>
 
 	<div id="footer">
+
 		<div id="display_users">
 			<code>List of all Users: </code>
 				<% User.all.each do |e| %>

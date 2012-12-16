@@ -5,7 +5,18 @@
 <% @posts.reverse.each do |post| %>
 	<% p = post.id.to_s + '. ' + post.title.to_s %>
 	<h2><%= link_to post.title, post %></h2>
-	<p>By: <%= link_to User.find(post.user_id).email, :controller => "users", :action => "others_profile", :id => User.find(post.user_id).id %> </p>
+
+	<p>
+		<% if User.find(post.user_id).image != nil %>
+			<img src="<%= User.find(post.user_id).image %>" alt=""><br />
+		<% else %>
+			<%= image_tag "nodisp.jpg" %><br />
+		<% end %>
+
+		By: <%= link_to User.find(post.user_id).email, :controller => "users", :action => "others_profile", :id => User.find(post.user_id).id %> 
+	</p>
+
+
 	<p><%= simple_format(post.content) %></p>
 	<p>Comment: <%= post.comments.count %> | <%= link_to "Reply", post %></p>
 	<% if post.user_id == current_user.id %>
@@ -50,7 +61,11 @@
 		Git Hub at: <a href="https://github.com/nixor/cpblog">Here!</a>
 			
 		<p>Welcome Suggestions, Cheers.</p>
-		<code>~nixor</code>
-		
+		<code>~nixor</code><br /><br />
+
+ 		<div class="fb-like" data-href="http://the-blog.herokuapp.com" data-send="true" data-width="450" data-show-faces="true" data-font="lucida grande" data-colorscheme="dark"></div>
+
+ 		<div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>
+
 	<% end %>
 </p>

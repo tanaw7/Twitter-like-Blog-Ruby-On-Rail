@@ -11,4 +11,5 @@ class ApplicationController < ActionController::Base
   def current_post #notworking
   	@current_post ||= Post.find(session[:post_id]) if session[:post_id]
   end
+
 end
