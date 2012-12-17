@@ -2,6 +2,8 @@ class SessionsController < ApplicationController
   def new
   end
   
+
+
   def create
     user = User.authenticate(params[:email], params[:password])
     if user
@@ -11,6 +13,13 @@ class SessionsController < ApplicationController
       flash.now.alert = "Invalid email or password"
       render "new"
     end
+  end
+
+
+  def createfb
+    user = User.from_omniauth(env["omniauth.auth"])
+    session[:user_id] = user.id
+    redirect_to root_url, :notice => "Logged in!"
   end
 
   def destroy

@@ -8,15 +8,31 @@
 </head>
 <body>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=183919201747476";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- ******************* Header ******************* -->
+
 	<div id="header">
 		
 		<div id="headnav">
 			<p>The #BLoG</p>
 		</div>
+        
+		<div id="user_nav">
+		  <% if current_user %>
+		  <% else %>
+		    <%= link_to (image_tag "fblogin.gif"), "/auth/facebook/", id: "sign_in" %>
+		  <% end %>
+		</div>
 
-       <iframe src="https://www.facebook.com/plugins/like.php?href=the-blog.herokuapp.com"
-        scrolling="no" frameborder="0"
-        style="border:none; width:450px; height:80px"></iframe>
+
 		
 	</div>
 
@@ -38,6 +54,7 @@
 			<div id="leftnav"><%= link_to "Profile", root_url %></div><br />
 			<div id="leftnav"><%= link_to "Sign up", sign_up_path %></div><br />
 			<div id="leftnav"><%= link_to "Log in", log_in_path %></div><br />
+			<div id="leftnav"><%= link_to (image_tag "fblogin.gif"), "/auth/facebook/", id: "sign_in" %></div><br />
 
 		<% end %>
 
@@ -47,11 +64,12 @@
 		
 
 	</div>
+<!-- *************** Right Navigation bar **************************-->
 
 	<div id="right" class="column">
 		<div id="line1">Recent Posts: </div>
 		<div id="recentPosts">
-			<% Post.last(7).reverse.each do |e| %>
+			<% Post.last(10).reverse.each do |e| %>
   				<hr />
   				<code>
    					<%= link_to e.title, :controller => "posts", :action => "show", :id => e.id %>   				
@@ -61,25 +79,18 @@
 		
 	</div>
 
+<!-- ******************* Footer ******************* -->
+
 	<div id="footer">
+
 		<div id="display_users">
-			<code>List of all Users: </code>
-				<% User.all.each do |e| %>
+			<code>Recent registered users: </code>
+				<% User.last(5).each do |e| %>
   			<code>
    				[<%= link_to e.email, :controller => "users", :action => "others_profile", :id => e.id %>]   				
  			</code>
   				<% end %>
 		</div>
-		<div id="display_posts">
-		
-			<code>List of all post IDs: </code>
-				<% Post.all.each do |e| %>
-  			<code>
-    			<%= link_to e.id, e%>
-  			</code>
-  				<% end %>
-		</div>
-	</div>
 
 </body>
 </html>

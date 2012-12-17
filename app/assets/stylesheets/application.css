@@ -148,6 +148,11 @@ body code {
 	font-size: 12pt;
 }
 
+.profiles {
+	font-size: 16pt;
+	text-align: center;
+}
+
 #right {
 	background: darkgrey;
 	background-image: url('smless5.jpg');
@@ -211,4 +216,11 @@ hr {
 @font-face {
 	font-family: 'Loyal';
 	src: url('Loyal.tff');
+}
+
+/************* FACEBOOK ***************************/
+
+.fb-send {
+	margin-left: 3pt;
+	margin-right: auto;
 }

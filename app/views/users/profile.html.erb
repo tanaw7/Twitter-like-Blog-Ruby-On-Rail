@@ -1,11 +1,22 @@
 
+<div class="profiles">
 
-<h1>My Profile:</h1>
+	<h1>My Profile:</h1>
 
-<code>email: <%= @user.email %></code><br />
-<code>user_id: <%= @user.id %></code><br />
-<code>post counts: <%= @user.posts.count %></code> <br />
-<code>comments: <%= @user.comments.count %></code><br />
-<code>join_date: <%= @user.created_at %></code><br />
+	<%if (@user.image != nil) %>
+		<img src="<%= @user.image %>" alt="">
+	<% else %>
+		<%= image_tag "nodisp.jpg" %>
+	<% end %>
 
-<small>My #Blog Posts: <%= link_to "Click", :controller => "users", :action => "show", :id => @user.id %> </small>
+	<br /><br />
+
+	<p>email: <%= @user.email %></p>
+	<p>user_id: <%= @user.id %></p>
+	<p>post counts: <%= @user.posts.count %></p> 
+	<p>comments: <%= @user.comments.count %></p>
+	<p>join_date: <%= @user.created_at %></p>
+
+	<small>My #Blog Posts: <%= link_to "Click", :controller => "users", :action => "show", :id => @user.id %> </small>
+
+</div>

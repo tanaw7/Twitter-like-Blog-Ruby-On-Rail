@@ -1,11 +1,21 @@
 
+<div class="profiles">
+	<h1>Profile page of: <%= @other.email %></h1>
 
-<h1>Profile page of: <%= @other.email %></h1>
+	<%if (@other.image != nil) %>
+		<img src="<%= @other.image %>" alt="">
+	<% else %>
+		<%= image_tag "nodisp.jpg" %>
+	<% end %>
 
-<code>email: <%= @other.email %></code><br />
-<code>user_id: <%= @other.id %></code><br />
-<code>post counts: <%= @other.posts.count %></code><br />
-<code>comments: <%= @other.comments.count %></code><br />
-<code>join_date: <%= @other.created_at %></code><br />
+	<br /><br />
 
-<small>#Blog Posts: <%= link_to "Click", :controller => "users", :action => "show", :id => @other.id %> </small>
+	<p>email: <%= @other.email %></p>
+	<p>user_id: <%= @other.id %></p>
+	<p>post counts: <%= @other.posts.count %></p>
+	<p>comments: <%= @other.comments.count %></p>
+	<p>join_date: <%= @other.created_at %></p>
+
+	<small>#Blog Posts: <%= link_to "Click", :controller => "users", :action => "show", :id => @other.id %> </small>
+
+</div>

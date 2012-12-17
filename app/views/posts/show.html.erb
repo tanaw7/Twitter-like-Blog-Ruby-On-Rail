@@ -2,9 +2,18 @@
 
 <h1 class="title"><%= @post.title %></h1>
 <p class="paragraph"><%= simple_format(@post.content) %></p>
-<small><%= @post.created_at %></small><br />
-<small>post_id: <%= @post.id %></small><br />
+<br /><br />
+
+<% if User.find(@post.user_id).image != nil %>
+	<img src="<%= User.find(@post.user_id).image %>" alt=""><br />
+<% else %>
+	<%= image_tag "nodisp.jpg" %><br />
+<% end %>
+
+
 <small>Posted by: <%= link_to @user.email, :controller => "users", :action => "others_profile", :id => @user.id %> </small>
+<small><%= @post.created_at %></small><br />
+<div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false" data-colorscheme="dark"></div>
 
 
 <!--  If the current user is the owner of the post    -->
@@ -32,6 +41,12 @@
 
 <h2 id="line1">~~ Comments ~~</h2>
 <% @comments.each do |comment| %>
+
+	<% if User.find(comment.user_id).image != nil %>
+		<img src="<%= User.find(comment.user_id).image %>" alt=""><br />
+	<% else %>
+		<%= image_tag "nodisp.jpg" %><br />
+	<% end %>
 	<p>By: <%= link_to User.find(comment.user_id).email, :controller => "users", :action => "others_profile", :id => comment.user_id %> </p>
 	<p class="paragraph"><%= simple_format(comment.content) %></p>
 	
