@@ -5,6 +5,7 @@ Blog::Application.routes.draw do
   get "sign_up" => "users#new", :as => "sign_up"
   get "profile" => "users#profile", :as => "profile"
   get "others_profile" => "users#others_profile", :as => "others_profile"
+  get "feed" => "posts#feed", :as => "feed"
 
   match "/profile/:id" => "users#profile"
 #### FOR FACEBOOK ######################################

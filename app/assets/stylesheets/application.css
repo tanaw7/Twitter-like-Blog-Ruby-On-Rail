@@ -97,6 +97,11 @@ body code {
 #user_nav {
 	background: black;
 	box-shadow: 5px 5px 24px white;
+	text-align: right;
+	padding-right: 0.5em;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	font-size: 12pt;
 }
 
 #footer {
@@ -154,7 +159,7 @@ body code {
 }
 
 .profiles {
-	font-size: 16pt;
+	font-size: 12pt;
 	text-align: center;
 }
 

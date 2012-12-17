@@ -1,57 +1,19 @@
-<h1>The #BLoG Home Feeds</h1>
 
-<!-- ********************* Each Post ********************* -->
+<p><code>
+	Welcome to the #BLoG !
 
-<% @posts.reverse.each do |post| %>
-	<% p = post.id.to_s + '. ' + post.title.to_s %>
-	<h2><%= link_to post.title, post %></h2>
+	My First project on Learning Ruby On Rails.<br/ >
+	You may sign-up for a new account or log-in with Facebook.
+	Enjoy.
 
-	<p>
-		<% if User.find(post.user_id).image != nil %>
-			<img src="<%= User.find(post.user_id).image %>" alt=""><br />
-		<% else %>
-			<%= image_tag "nodisp.jpg" %><br />
-		<% end %>
+</code></p>
 
-		By: <%= link_to User.find(post.user_id).email, :controller => "users", :action => "others_profile", :id => User.find(post.user_id).id %> 
-	</p>
+<br />
 
+<p>Please leave some suggestions in the comment box, Cheers.</p>
 
-	<p><%= simple_format(post.content) %></p>
-	<p>Comment: <%= post.comments.count %> | <%= link_to "Reply", post %></p>
-	<% if post.user_id == current_user.id %>
-	<p>
-	   <%= link_to "Edit", edit_post_path(post) %>
-	   <%= "  " %>
-	   <%= link_to "Delete", post, :confirm => "Are you sure?", 
-	   :method => :delete %>
-	</p>
-	<% end %>
-	<h2 id="line1">~~~~</h2>
-<% end %>
+<div class="fb-comments" data-href="http://the-blog.herokuapp.com" data-width="470" data-num-posts="2" data-colorscheme="dark"></div>
 
-<p> <!-- Here shows either if logged in or not -->
-	<% if current_user %>
-		<%= link_to "Add a New Post", new_post_path %>
-	<% else %>
-		<p><code>
-			Welcome to the #BLoG !
+<div class="fb-like" data-href="http://the-blog.herokuapp.com" data-send="true" data-width="450" data-show-faces="true" data-font="lucida grande" data-colorscheme="dark"></div>
 
-			My First project on Learning Ruby On Rails.<br/ >
-			You may sign-up for a new account or log-in with Facebook.
-			Enjoy.
-
-		</code></p>
-
-		<br />
-		
-		<p>Please leave some suggestions in the comment box, Cheers.</p>
-
-		<div class="fb-comments" data-href="http://the-blog.herokuapp.com" data-width="470" data-num-posts="2" data-colorscheme="dark"></div>
-
- 		<div class="fb-like" data-href="http://the-blog.herokuapp.com" data-send="true" data-width="450" data-show-faces="true" data-font="lucida grande" data-colorscheme="dark"></div>
-
- 		<div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>
-
-	<% end %>
-</p>
+<div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1"></div>

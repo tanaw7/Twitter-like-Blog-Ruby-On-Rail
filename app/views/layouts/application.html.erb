@@ -26,7 +26,9 @@
 		</div>
         
 		<div id="user_nav">
+
 		  <% if current_user %>
+		  	Logged in as <%= current_user.email %>
 		  <% else %>
 		    <%= link_to (image_tag "fblogin.gif"), "/auth/facebook/", id: "sign_in" %>
 		  <% end %>
@@ -45,13 +47,14 @@
 	<div id="left" class="column">
 
 		<% if current_user %>
-			<p id="leftnav">Logged in as <%= current_user.email %></p>
 			<div id="leftnav"><%= link_to "Home",  root_url %></div><br />
-			<div id="leftnav"><%= link_to "Profile", profile_url %></div><br />		
+			<div id="leftnav"><%= link_to "Profile", profile_url %></div><br />					
+			<div id="leftnav"><%= link_to "Feeds", feed_url %></div><br />		
 			<div id="leftnav"><%= link_to "Log out", log_out_path %></div><br />
 			<% else %>
 			<div id="leftnav"><%= link_to "Home",  root_url %></div><br />
 			<div id="leftnav"><%= link_to "Profile", root_url %></div><br />
+			<div id="leftnav"><%= link_to "Feeds", root_url %></div><br />
 			<div id="leftnav"><%= link_to "Sign up", sign_up_path %></div><br />
 			<div id="leftnav"><%= link_to "Log in", log_in_path %></div><br />
 			<div id="leftnav"><%= link_to (image_tag "fblogin.gif"), "/auth/facebook/", id: "sign_in" %></div><br />
