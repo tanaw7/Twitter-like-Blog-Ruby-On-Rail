@@ -130,8 +130,8 @@ body code {
 #leftnav, .leftnav {
 	background-image: url('smless4.jpg');
 	border-radius: 14pt;
-	padding-top: 18px;
-	padding-bottom: 14px;
+	padding-top: 8px;
+	padding-bottom: 4px;
 	background-color: #262836;
 	opacity: 1.0;
 	color: white;
@@ -146,7 +146,7 @@ body code {
 }
 
 #leftnav a:hover{
-	color: white;
+	color: #33FF66;
 }
 
 #center {
@@ -258,4 +258,15 @@ hr {
 
 .remove a:hover{
 	color: red;
+}
+
+#welcome {
+	color: #CCFF33;
+	font-size: 14pt;
+}
+
+#biggy {
+	font-size: 24pt;
+	font-weight: bold;
+	color: #993300;
 }
