@@ -148,6 +148,11 @@ body code {
 	font-size: 12pt;
 }
 
+.profiles {
+	font-size: 16pt;
+	text-align: center;
+}
+
 #right {
 	background: darkgrey;
 	background-image: url('smless5.jpg');

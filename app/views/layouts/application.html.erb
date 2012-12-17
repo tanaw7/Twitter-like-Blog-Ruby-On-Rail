@@ -17,6 +17,8 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<!-- ******************* Header ******************* -->
+
 	<div id="header">
 		
 		<div id="headnav">
@@ -67,7 +69,7 @@
 	<div id="right" class="column">
 		<div id="line1">Recent Posts: </div>
 		<div id="recentPosts">
-			<% Post.last(7).reverse.each do |e| %>
+			<% Post.last(10).reverse.each do |e| %>
   				<hr />
   				<code>
    					<%= link_to e.title, :controller => "posts", :action => "show", :id => e.id %>   				
@@ -77,26 +79,18 @@
 		
 	</div>
 
+<!-- ******************* Footer ******************* -->
+
 	<div id="footer">
 
 		<div id="display_users">
-			<code>List of all Users: </code>
-				<% User.all.each do |e| %>
+			<code>Recent registered users: </code>
+				<% User.last(5).each do |e| %>
   			<code>
    				[<%= link_to e.email, :controller => "users", :action => "others_profile", :id => e.id %>]   				
  			</code>
   				<% end %>
 		</div>
-		<div id="display_posts">
-		
-			<code>List of all post IDs: </code>
-				<% Post.all.each do |e| %>
-  			<code>
-    			<%= link_to e.id, e%>
-  			</code>
-  				<% end %>
-		</div>
-	</div>
 
 </body>
 </html>

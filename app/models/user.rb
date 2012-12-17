@@ -6,10 +6,11 @@ class User < ActiveRecord::Base
   has_many :comments
 
   before_save :encrypt_password
-  
 
-  #validates_confirmation_of :password
-  #validates_presence_of :password, :on => :create
+
+
+  validates_confirmation_of :password
+  validates_presence_of :password, :on => :create
   #validates_presence_of :email
   #validates_uniqueness_of :email
   
@@ -42,6 +43,8 @@ end
       user.image = auth.info.image
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.password = 'fb1234'
+      user.password_confirmation = 'fb1234'
       user.save!
     end
   end
