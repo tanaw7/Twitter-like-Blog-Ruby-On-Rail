@@ -12,12 +12,24 @@ class PostsController < ApplicationController
 
 	def feed
 		if current_user
-			@posts = Post.last(8)
+			@fellows = Fellowship.where(:user_id => current_user.id)
+			@posts = Post.all
 			#@user = User.find(session(:user_id))
 			#@posts = Post.all
 		else
 			@posts = Post.where(:user_id => nil)
 		end	
+	end
+
+	def userposts
+		if current_user
+			@fellows = Fellowship.where(:user_id => current_user.id)
+			@posts = Post.where(:user_id => current_user.id)
+			#@user = User.find(session(:user_id))
+			#@posts = Post.all
+		else
+			@posts = Post.where(:user_id => nil)
+		end			
 	end
 
 

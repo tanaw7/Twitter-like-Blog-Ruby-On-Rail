@@ -2,12 +2,18 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
   attr_accessor :password
 
+########### For Fellowship ####################
+  has_many :fellowships
+  has_many :fellows, :through => :fellowships
+###############################################
+
   has_many :posts
   has_many :comments
 
   before_save :encrypt_password
 
-
+  validates_presence_of :name
+  validates_uniqueness_of :name
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create

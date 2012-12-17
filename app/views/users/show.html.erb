@@ -1,5 +1,18 @@
+<% if current_user %>
+	<% @cu = current_user.id %>
+<% else %>
+	<% @cu = 0 %>
+<% end %>
+
 
 <h1><%= @user.email %> #Blog</h1>
+
+<% if @cu == @user.id %>
+	<div class="newpost"><%= link_to "Add a New Post", new_post_path %></div>
+<% end %>
+
+<h2 id="line1">~~~~</h2>
+
 
 <% @posts.reverse.each do |post| %>
 	<h2><%= link_to post.title, post %></h2>
@@ -7,13 +20,6 @@
 	<p><%= simple_format(post.content) %></p>
 
 <!-- Display Edit and Delete if the current_user owns the post -->
-	
-<% if current_user %>
-	<% @cu = current_user.id %>
-<% else %>
-	<% @cu = 0 %>
-<% end %>
-
 
 <% if (@cu == @user.id) %>
 	<p>
@@ -24,20 +30,9 @@
 	</p>
 <% else %>
 	<p>
-		[Nuke this?]
+		<div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false" data-colorscheme="dark"></div>
 	</p>
 <% end %>	
 	
-	
-	
-	
 	<h2 id="line1">~~~~</h2>
 <% end %>
-
-<p> <!-- Here shows either if logged in or not -->
-	<% if @cu == @user.id %>
-		<%= link_to "Add a New Post", new_post_path %>
-	<% else %>
-		<% nil %>
-	<% end %>
-</p>

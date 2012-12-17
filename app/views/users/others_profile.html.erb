@@ -18,4 +18,22 @@
 
 	<small>#Blog Posts: <%= link_to "Click", :controller => "users", :action => "show", :id => @other.id %> </small>
 
+  	<% @v = 1 %>
+  	<% Fellowship.all.each do |i| %>
+  		<% if @other.id == i.fellow_id %>
+  			<% @v = 0 %>
+  		<% end %> 
+  	<% end %>
+
+    <div id="user">
+
+      <% if (@v == 1) %>
+        <%= @other.email %>
+        <%= link_to "Add Fellow", fellowships_path(:fellow_id => @other.id), :method => :post %>
+      <% else %>
+  		<%= @other.email %>
+      <% end %>
+
+    </div>
+
 </div>

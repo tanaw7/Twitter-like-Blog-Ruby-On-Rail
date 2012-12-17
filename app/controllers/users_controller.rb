@@ -1,4 +1,13 @@
 class UsersController < ApplicationController
+
+  def newfellows
+    @users = User.all
+  end
+
+  def showfellows
+    @user = current_user
+  end
+
   def index
       @posts = User.find(params[:id]).posts
   end

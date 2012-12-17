@@ -20,22 +20,16 @@
 <!-- ******************* Header ******************* -->
 
 	<div id="header">
-		
 		<div id="headnav">
 			<p>The #BLoG</p>
 		</div>
-        
 		<div id="user_nav">
-
 		  <% if current_user %>
 		  	Logged in as <%= current_user.email %>
 		  <% else %>
 		    <%= link_to (image_tag "fblogin.gif"), "/auth/facebook/", id: "sign_in" %>
 		  <% end %>
 		</div>
-
-
-		
 	</div>
 
 	<div id="center" class="column">
@@ -48,13 +42,19 @@
 
 		<% if current_user %>
 			<div id="leftnav"><%= link_to "Home",  root_url %></div><br />
-			<div id="leftnav"><%= link_to "Profile", profile_url %></div><br />					
-			<div id="leftnav"><%= link_to "Feeds", feed_url %></div><br />		
+			<div id="leftnav"><%= link_to "Profile", profile_url %></div><br />
+			<div id="leftnav"><%= link_to "Fellowship Feeds", feed_url %></div><br />			
+			<div id="leftnav"><%= link_to "My Posts", userposts_url %></div><br />
+			<div id="leftnav"><%= link_to "My Fellows", showfellows_url %></div><br />					
+			<div id="leftnav"><%= link_to "New Fellows", newfellows_url %></div><br />					
 			<div id="leftnav"><%= link_to "Log out", log_out_path %></div><br />
 			<% else %>
 			<div id="leftnav"><%= link_to "Home",  root_url %></div><br />
 			<div id="leftnav"><%= link_to "Profile", root_url %></div><br />
-			<div id="leftnav"><%= link_to "Feeds", root_url %></div><br />
+			<div id="leftnav"><%= link_to "Fellowship Feeds", root_url %></div><br />
+			<div id="leftnav"><%= link_to "My Posts", root_url %></div><br />
+			<div id="leftnav"><%= link_to "My Fellows", root_url %></div><br />
+			<div id="leftnav"><%= link_to "New Fellows", root_url %></div><br />
 			<div id="leftnav"><%= link_to "Sign up", sign_up_path %></div><br />
 			<div id="leftnav"><%= link_to "Log in", log_in_path %></div><br />
 			<div id="leftnav"><%= link_to (image_tag "fblogin.gif"), "/auth/facebook/", id: "sign_in" %></div><br />
@@ -88,7 +88,7 @@
 
 		<div id="display_users">
 			<code>Recent registered users: </code>
-				<% User.last(5).each do |e| %>
+				<% User.last(30).each do |e| %>
   			<code>
    				[<%= link_to e.email, :controller => "users", :action => "others_profile", :id => e.id %>]   				
  			</code>

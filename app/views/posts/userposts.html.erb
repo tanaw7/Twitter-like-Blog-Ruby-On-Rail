@@ -1,27 +1,11 @@
+<h1>The #BLoG: My Posts</h1>
 
-[.html.erb useful codes]
+<!-- ********************* Each Post ********************* -->
 
-# A link to that user's profile, displaying that user's email (or username)
-<p>By: <%= link_to @user.email, :controller => "users", :action => "others_profile", :id => @user.id %> </p>
-
-
-# create a variable @cu current user exists?
-<% if current_user %>
-	<% @cu = current_user.id %>
-<% else %>
-	<% @cu = 0 %>
-<% end %>
-
-# for querying followed posts
-Post.where("user_id = 1 OR user_id = 2").last(5).each {|i| puts i.id; puts i.user_id}
-
-
-Fellowship.all.each do |i|
-    User.find(i.fellow_id).posts.each do |j|
-      puts j.title
-      puts j.content
-    end
-  end
+<%if current_user%>
+	<div class="newpost"><%= link_to "ADD A NEW POST", new_post_path %></div>
+<%end%>
+<h2 id="line1">~~~~</h2>
 
 <% @posts.reverse.each do |post| %>
 	<% p = post.id.to_s + '. ' + post.title.to_s %>
@@ -52,6 +36,3 @@ Fellowship.all.each do |i|
 <% end %>
 
 <!-- Here shows either if logged in or not -->
-<%if current_user%>
-	<%= link_to "Add a New Post", new_post_path %>
-<%end%>

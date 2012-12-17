@@ -1,0 +1,13 @@
+<p>My Email: <%= @user.email %></p>
+
+<h2>My Fellows</h2>
+<ul>
+  <% @user.fellowships.each do |fellowship| %>
+    <li>
+      <%= link_to fellowship.fellow.email, :controller => "users", :action => "others_profile", :id => fellowship.fellow_id %>
+      - <small class="remove"><%= link_to "remove", fellowship, :method => :delete %></small>
+    </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Find New Fellows", newfellows_path %></p>

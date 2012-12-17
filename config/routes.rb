@@ -6,6 +6,12 @@ Blog::Application.routes.draw do
   get "profile" => "users#profile", :as => "profile"
   get "others_profile" => "users#others_profile", :as => "others_profile"
   get "feed" => "posts#feed", :as => "feed"
+  get "userposts" => "posts#userposts", :as => "userposts"
+
+#### FOR FELLOWSHIP ###########################################
+  get "newfellows" => "users#newfellows", :as => "newfellows"
+  get "showfellows" => "users#showfellows", :as => "showfellows"
+################################################################
 
   match "/profile/:id" => "users#profile"
 #### FOR FACEBOOK ######################################
@@ -16,7 +22,10 @@ Blog::Application.routes.draw do
 
   root :to => 'posts#index'
 
+  resources :fellowships
+  resources :fellowship
   resources :users
+  resources :user
   resources :posts
   resources :sessions
   resources :comments

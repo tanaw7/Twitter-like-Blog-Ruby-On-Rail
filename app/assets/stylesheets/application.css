@@ -234,3 +234,28 @@ hr {
 	margin-left: 3pt;
 	margin-right: auto;
 }
+
+.newpost {
+	margin-left: auto;
+	margin-right: auto;
+	width: 20%;
+	padding-top: 0.2em;
+	padding-bottom: 0.1em;
+	background-color: white;
+	box-shadow: 5px 5px 24px white;
+	border-radius: 12pt;
+	text-align: center;
+}
+
+.newpost a{
+	color: orange;
+	text-align: center;
+}
+
+.remove a{
+	color: pink;
+}
+
+.remove a:hover{
+	color: red;
+}
