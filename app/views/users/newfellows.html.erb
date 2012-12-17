@@ -2,7 +2,7 @@
   <% @users.each do |user| %>
   	<% @v = 1 %>
   	<% Fellowship.all.each do |i| %>
-  		<% if user.id == i.fellow_id %>
+  		<% if user.id == i.fellow_id && current_user.id == i.user_id%>
   			<% @v = 0 %>
   		<% end %> 
   	<% end %>

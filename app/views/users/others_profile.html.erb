@@ -20,7 +20,7 @@
 
   	<% @v = 1 %>
   	<% Fellowship.all.each do |i| %>
-  		<% if @other.id == i.fellow_id %>
+  		<% if @other.id == i.fellow_id && current_user.id == i.user_id%>
   			<% @v = 0 %>
   		<% end %> 
   	<% end %>
@@ -29,7 +29,7 @@
 
       <% if (@v == 1) %>
         <%= @other.email %>
-        <%= link_to "Add Fellow", fellowships_path(:fellow_id => @other.id), :method => :post %>
+        <%= link_to "Add Fellow", fellowships_path(:fellow_id => @other.id, :user_id => current_user.id), :method => :post %>
       <% else %>
   		<%= @other.email %>
       <% end %>
