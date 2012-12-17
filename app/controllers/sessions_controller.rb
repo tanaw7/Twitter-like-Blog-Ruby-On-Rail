@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
   def createfb
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
-    redirect_to root_url
+    redirect_to root_url, :notice => "Logged in!"
   end
 
   def destroy

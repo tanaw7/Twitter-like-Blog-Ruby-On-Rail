@@ -7,7 +7,6 @@ Blog::Application.routes.draw do
   get "others_profile" => "users#others_profile", :as => "others_profile"
 
   match "/profile/:id" => "users#profile"
-
 #### FOR FACEBOOK ######################################
   match 'auth/:provider/callback', to: 'sessions#createfb'
   match 'auth/failure', to: redirect('/')
