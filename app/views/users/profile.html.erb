@@ -3,7 +3,13 @@
 
 	<h1>My Profile:</h1>
 
-	<img src="<%= @user.image %>" alt=""><br /><br />
+	<%if (@user.image != nil) %>
+		<img src="<%= @user.image %>" alt="">
+	<% else %>
+		<%= image_tag "nodisp.jpg" %>
+	<% end %>
+
+	<br /><br />
 
 	<p>email: <%= @user.email %></p>
 	<p>user_id: <%= @user.id %></p>
