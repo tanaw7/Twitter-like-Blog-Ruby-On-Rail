@@ -25,7 +25,7 @@
 		</div>
 		<div id="user_nav">
 		  <% if current_user %>
-		  	Logged in as <%= current_user.email %>
+		  	Logged in as <%= current_user.name %>
 		  <% else %>
 		    <%= link_to (image_tag "fblogin.gif"), "/auth/facebook/", id: "sign_in" %>
 		  <% end %>
@@ -85,9 +85,9 @@
 
 		<div id="display_users">
 			<code>Recent registered users: </code>
-				<% User.last(30).each do |e| %>
+				<% User.last(7).each do |e| %>
   			<code>
-   				[<%= link_to e.email, :controller => "users", :action => "others_profile", :id => e.id %>]   				
+   				[<%= link_to e.name, :controller => "users", :action => "others_profile", :id => e.id %>]   				
  			</code>
   				<% end %>
 		</div>

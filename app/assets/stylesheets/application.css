@@ -100,7 +100,11 @@ body code {
 	width: 80%;
 	margin-right: auto;
 	margin-left: auto;
-	border-radius: 40pt; 
+	border-radius: 40pt;
+}
+
+#headnav p{
+	max-width: 100%;
 }
 
 #user_nav {

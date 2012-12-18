@@ -9,11 +9,10 @@
 
     <div id="user">
 
-      <% if (user.email != current_user.email && @v == 1) %>
-        <%= user.email %>
+      <% if (user.id != current_user.id && @v == 1) %>
+        <%= user.name %>
         <%= link_to "Add Fellow", fellowships_path(:fellow_id => user.id), :method => :post %>
-      <% elsif user.email != current_user.email%>
-  		<%= user.email %>
+      <% elsif user.id != current_user.id%>
       <% end %>
 
     </div>
