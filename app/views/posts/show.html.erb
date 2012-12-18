@@ -1,7 +1,7 @@
 <!-- Display current post -->
 
 <h1 class="title"><%= @post.title %></h1>
-<p class="paragraph"><%= auto_html(@post.content){youtube} %></p>
+<p class="paragraph"><%= auto_html(@post.content){html_escape;youtube; image; link(:target => 'blank'); simple_format} %></p>
 <br /><br />
 
 <% if User.find(@post.user_id).image != nil %>

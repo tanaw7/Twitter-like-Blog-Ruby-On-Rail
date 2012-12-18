@@ -7,6 +7,7 @@ Blog::Application.routes.draw do
   get "others_profile" => "users#others_profile", :as => "others_profile"
   get "feed" => "posts#feed", :as => "feed"
   get "userposts" => "posts#userposts", :as => "userposts"
+  get "recentposts" => "posts#recentposts", :as => "recentposts"
 
 #### FOR FELLOWSHIP ###########################################
   get "newfellows" => "users#newfellows", :as => "newfellows"

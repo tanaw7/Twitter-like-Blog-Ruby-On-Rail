@@ -35,6 +35,16 @@ class PostsController < ApplicationController
 		end			
 	end
 
+	def recentposts
+		if current_user
+			@posts = Post.last(20)
+			#@user = User.find(session(:user_id))
+			#@posts = Post.all
+		else
+			@posts = Post.where(:user_id => nil)
+		end	
+	end
+
 
 	def new
 		@post = Post.new
