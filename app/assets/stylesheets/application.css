@@ -14,7 +14,7 @@ img {
 }
 
 p {
-	max-width: 480px;
+	max-width: 640px;
 }
 
 #header, #footer {
@@ -170,6 +170,10 @@ body code {
 .profiles {
 	font-size: 12pt;
 	text-align: center;
+}
+
+.profiles p{
+	max-width: 900px;
 }
 
 #right {
