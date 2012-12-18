@@ -8,6 +8,11 @@ body {
 	min-width: 240px;       /* LC fullwidth + CC padding */
 }
 
+img {
+	max-width: 500px;
+	height: auto;
+}
+
 #header, #footer {
 	margin-left: -200px;    /* LC fullwidth */
 	margin-right: -190px;   /* RC fullwidth + CC padding */
