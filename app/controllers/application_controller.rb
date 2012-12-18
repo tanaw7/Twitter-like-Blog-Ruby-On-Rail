@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+
+  helper ApplicationHelper
   
   private
   def current_user

@@ -17,7 +17,7 @@
 <% @posts.reverse.each do |post| %>
 	<h2><%= link_to post.title, post %></h2>
 	<p>By: <%= link_to @user.email, :controller => "users", :action => "others_profile", :id => @user.id %> </p>
-	<p><%= simple_format(post.content) %></p>
+	<p><%= auto_html(post.content){youtube; link(:target => 'blank'); simple_format} %></p>
 
 <!-- Display Edit and Delete if the current_user owns the post -->
 

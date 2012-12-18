@@ -21,4 +21,5 @@ end
 gem 'jquery-rails'
 #gem 'turbolinks'
 gem 'omniauth-facebook', '1.4.0'
+gem 'auto_html'
 

@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+#include AutoHtml
+
 	def index
 
 		if current_user

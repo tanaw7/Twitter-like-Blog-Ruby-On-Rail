@@ -12,4 +12,12 @@ class Post < ActiveRecord::Base
   validates_presence_of :content, :on => :update
   validates_presence_of :title, :on => :update
 
+  auto_html_for :content do
+    html_escape
+    image
+    youtube(:width => 400, :height => 250)
+    link :target => "_blank", :rel => "nofollow"
+    simple_format
+  end
+
 end

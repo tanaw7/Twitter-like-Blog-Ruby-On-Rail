@@ -1,5 +1,7 @@
 module ApplicationHelper
 
+  include AutoHtml
+
   def all_users
     @vall_users ||= User.connection.select_values(User.select("email").to_sql)
   end

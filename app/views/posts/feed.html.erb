@@ -26,7 +26,7 @@
 		</p>
 
 
-		<p><%= simple_format(post.content) %></p>
+		<p><%= auto_html(post.content){youtube; link(:target => 'blank'); simple_format} %></p>
 		<p>Comment: <%= post.comments.count %> | <%= link_to "Reply", post %></p>
 		<% if post.user_id == current_user.id %>
 		<p>

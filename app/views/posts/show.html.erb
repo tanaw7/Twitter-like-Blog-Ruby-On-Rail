@@ -1,7 +1,7 @@
 <!-- Display current post -->
 
 <h1 class="title"><%= @post.title %></h1>
-<p class="paragraph"><%= simple_format(@post.content) %></p>
+<p class="paragraph"><%= auto_html(@post.content){youtube} %></p>
 <br /><br />
 
 <% if User.find(@post.user_id).image != nil %>
@@ -48,7 +48,7 @@
 		<%= image_tag "nodisp.jpg" %><br />
 	<% end %>
 	<p>By: <%= link_to User.find(comment.user_id).email, :controller => "users", :action => "others_profile", :id => comment.user_id %> </p>
-	<p class="paragraph"><%= simple_format(comment.content) %></p>
+	<p class="paragraph"><%= auto_html(comment.content){youtube; link(:target => 'blank'); simple_format} %></p>
 	
 	<!-- EDIT AND DELETE COMMENT Buttons here -->
 	<br /><br />
