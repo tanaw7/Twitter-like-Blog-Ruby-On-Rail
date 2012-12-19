@@ -4,7 +4,7 @@
 <ul>
   <% @user.fellowships.each do |fellowship| %>
     <li>
-      <%= link_to fellowship.fellow.email, :controller => "users", :action => "others_profile", :id => fellowship.fellow_id %>
+      <%= link_to fellowship.fellow.name, :controller => "users", :action => "others_profile", :id => fellowship.fellow_id %>
       - <small class="remove"><%= link_to "remove", fellowship, :method => :delete %></small>
     </li>
   <% end %>
