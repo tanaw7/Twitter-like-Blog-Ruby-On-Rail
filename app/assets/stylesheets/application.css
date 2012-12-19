@@ -98,6 +98,7 @@ body code {
 
 	box-shadow: 5px 5px 24px black;
 	width: 80%;
+	max-height: 66px;
 	margin-right: auto;
 	margin-left: auto;
 	border-radius: 40pt;
