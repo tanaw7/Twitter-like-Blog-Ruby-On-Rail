@@ -15,7 +15,7 @@
 
 	<p><%= auto_html(post.content){html_escape;youtube; image; link(:target => 'blank'); simple_format} %></p>
 	<p>Comment: <%= post.comments.count %> | <%= link_to "Reply", post %></p>
-	<% if post.user_id == current_user.id %>
+	<% if post.user_id == @cuid %>
 	<p>
 	   <%= link_to "Edit", edit_post_path(post) %>
 	   <%= "  " %>

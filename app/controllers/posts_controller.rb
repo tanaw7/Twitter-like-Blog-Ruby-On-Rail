@@ -37,6 +37,12 @@ class PostsController < ApplicationController
 
 	def recentposts
 		@posts = Post.last(20)
+
+		if current_user
+			@cuid = current_user.id
+		else
+			@cuid = nil
+		end
 	end
 
 
