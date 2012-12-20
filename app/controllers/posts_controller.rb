@@ -41,7 +41,7 @@ class PostsController < ApplicationController
 		if current_user
 			@cuid = current_user.id
 		else
-			@cuid = nil
+			@cuid = 0
 		end
 	end
 
